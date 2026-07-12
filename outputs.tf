@@ -1,4 +1,9 @@
 # --- azurerm_mssql_server ---
+output "mssql_servers_id" {
+  description = "Map of id values across all mssql_servers, keyed the same as var.mssql_servers"
+  value       = module.mssql_servers.mssql_servers_id
+}
+
 output "mssql_servers_administrator_login" {
   description = "Map of administrator_login values across all mssql_servers, keyed the same as var.mssql_servers"
   value       = module.mssql_servers.mssql_servers_administrator_login
@@ -102,6 +107,11 @@ output "mssql_servers_version" {
 }
 
 # --- azurerm_mssql_server_dns_alias ---
+output "mssql_server_dns_aliases_id" {
+  description = "Map of id values across all mssql_server_dns_aliases, keyed the same as var.mssql_server_dns_aliases"
+  value       = module.mssql_server_dns_aliases.mssql_server_dns_aliases_id
+}
+
 output "mssql_server_dns_aliases_dns_record" {
   description = "Map of dns_record values across all mssql_server_dns_aliases, keyed the same as var.mssql_server_dns_aliases"
   value       = module.mssql_server_dns_aliases.mssql_server_dns_aliases_dns_record
