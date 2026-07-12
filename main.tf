@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.mssql_servers : {
       for k2, v2 in coalesce(v1.mssql_server_dns_aliases, {}) :
       "${k1}/${k2}" => merge(v2, {
-        mssql_server_id = module.mssql_servers.mssql_servers["${k1}"].id
+        mssql_server_id = module.mssql_servers.mssql_servers_id["${k1}"]
       })
     }
   ]...)
