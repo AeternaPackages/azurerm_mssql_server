@@ -12,12 +12,12 @@ locals {
 }
 
 module "mssql_servers" {
-  source        = "git::https://github.com/AeternaModules/azurerm_mssql_server.git?ref=v4.80.0"
+  source        = "git::https://github.com/AeternaModules/azurerm_mssql_server.git?ref=v4.81.0"
   mssql_servers = local.mssql_servers
 }
 
 module "mssql_server_dns_aliases" {
-  source                   = "git::https://github.com/AeternaModules/azurerm_mssql_server_dns_alias.git?ref=v4.80.0"
+  source                   = "git::https://github.com/AeternaModules/azurerm_mssql_server_dns_alias.git?ref=v4.81.0"
   mssql_server_dns_aliases = local.mssql_server_dns_aliases
   depends_on               = [module.mssql_servers]
 }
